@@ -67,9 +67,14 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="dashboardDropdown" role="button" data-bs-toggle="dropdown">Dashboard Links</a>
                         <ul class="dropdown-menu" aria-labelledby="dashboardDropdown">
-                            <li><a class="dropdown-item" href="#" onclick="handleNavigation('https://dashboard.transcanauto.com/#/superAdmin/vehicles/export/', 'ALL IN TRANSIT TO QAS'); return false;">ALL IN TRANSIT TO QAS</a></li>
-                            <li><a class="dropdown-item" href="#" onclick="handleNavigation('https://dashboard.transcanauto.com/#/superAdmin/vehicles/export/', 'ALL IN YARD'); return false;">ALL IN YARD</a></li>
-                            <li><a class="dropdown-item" href="#" onclick="handleNavigation('https://dashboard.transcanauto.com/#/superAdmin/vehicles/export/', 'ALL NO V.I.'); return false;">ALL NO V.I.</a></li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#">ALL</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#" onclick="handleNavigation('https://dashboard.transcanauto.com/#/superAdmin/vehicles/export/?query=U2FsdGVkX1%2FUEjy1Ll6Vp3NT2QdHtUcD...', 'ALL IN TRANSIT TO QAS'); return false;">ALL IN TRANSIT TO QAS</a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="handleNavigation('https://dashboard.transcanauto.com/#/superAdmin/vehicles/export/?query=U2FsdGVkX19URpzVgr9LRreNJOgxeOF2w9...', 'ALL IN YARD'); return false;">ALL IN YARD</a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="handleNavigation('https://dashboard.transcanauto.com/#/superAdmin/vehicles/export/?query=U2FsdGVkX18v%2F5A6a7ITwpciakW2gAsx...', 'ALL NO V.I.'); return false;">ALL NO V.I.</a></li>
+                                </ul>
+                            </li>
                         </ul>
                     </li>
                 </ul>
@@ -132,6 +137,73 @@
                 }
             });
         });
+
+        (function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has("autoFilter")) {
+                console.log("Auto-filter detected. Running script...");
+
+                function applyDateFilter() {
+                    console.log("Applying date filter...");
+
+                    let filterButton = document.querySelector('th:nth-child(8) div > div > div > button');
+                    if (filterButton) {
+                        console.log("Filter button found, clicking...");
+                        filterButton.click();
+                    } else {
+                        console.log("Filter button NOT found.");
+                    }
+
+                    setTimeout(() => {
+                        let firstCalendar = document.querySelector('th:nth-child(8) div > div > div > ul > li:nth-child(1) form fieldset:nth-child(1) div > input');
+                        if (firstCalendar) {
+                            console.log("First calendar found, setting date...");
+                            firstCalendar.click();
+                            setTimeout(() => {
+                                let date1 = new Date();
+                                date1.setHours(date1.getHours() - 48);
+                                firstCalendar.value = date1.toISOString().split('T')[0];
+                                firstCalendar.dispatchEvent(new Event('change'));
+                            }, 500);
+                        } else {
+                            console.log("First calendar NOT found.");
+                        }
+                    }, 1000);
+
+                    setTimeout(() => {
+                        let secondCalendar = document.querySelector('th:nth-child(8) div > div > div > ul > li:nth-child(1) form fieldset:nth-child(2) div > input');
+                        if (secondCalendar) {
+                            console.log("Second calendar found, setting date...");
+                            secondCalendar.click();
+                            setTimeout(() => {
+                                let date2 = new Date();
+                                secondCalendar.value = date2.toISOString().split('T')[0];
+                                secondCalendar.dispatchEvent(new Event('change'));
+                            }, 500);
+                        } else {
+                            console.log("Second calendar NOT found.");
+                        }
+                    }, 2000);
+
+                    setTimeout(() => {
+                        let applyButton = document.querySelector('th:nth-child(8) div > div > div > ul div div button:nth-child(1)');
+                        if (applyButton) {
+                            console.log("Apply button found, clicking...");
+                            applyButton.click();
+                        } else {
+                            console.log("Apply button NOT found.");
+                        }
+                    }, 3000);
+                }
+
+                document.addEventListener("DOMContentLoaded", function() {
+                    console.log("DOM fully loaded, running applyDateFilter...");
+                    applyDateFilter();
+                });
+            } else {
+                console.log("No auto-filter detected. Normal page load.");
+            }
+        })();
     </script>
 
 </body>
