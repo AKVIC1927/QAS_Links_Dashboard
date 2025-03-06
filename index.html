@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <!-- ✅ Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    
+    <style>
+        .dropdown-menu {
+            min-width: 200px;
+        }
+
+        .dropdown-submenu {
+            position: relative;
+        }
+
+        .dropdown-submenu .dropdown-menu {
+            display: none;
+            position: absolute;
+            left: 100%;
+            top: 0;
+        }
+
+        .dropdown-submenu:hover > .dropdown-menu {
+            display: block;
+        }
+
+        .navbar {
+            flex-wrap: wrap;
+            height: 50px;
+            padding: 5px 10px;
+            background: linear-gradient(87deg, #212529, #212229) !important;
+        }
+
+        .iframe-container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar navbar-expand-xl navbar-dark static-top">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <div class="navbar-brand">
+                <h3 id="selectedText" style="color: white; font-size: 16px; margin: 0;">Viewing: In Yard</h3>
+            </div>
+
+            <nav class="navbar-collapse collapse d-flex justify-content-center">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://akvic1927.github.io/QAS---In-Yard/">Adesa Form</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dashboardDropdown" role="button" data-bs-toggle="dropdown">Dashboard Links</a>
+                        <ul class="dropdown-menu" aria-labelledby="dashboardDropdown">
+                            <li><a class="dropdown-item" href="#" onclick="handleNavigation('https://dashboard.transcanauto.com/#/superAdmin/vehicles/export/', 'ALL IN TRANSIT TO QAS'); return false;">ALL IN TRANSIT TO QAS</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="handleNavigation('https://dashboard.transcanauto.com/#/superAdmin/vehicles/export/', 'ALL IN YARD'); return false;">ALL IN YARD</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="handleNavigation('https://dashboard.transcanauto.com/#/superAdmin/vehicles/export/', 'ALL NO V.I.'); return false;">ALL NO V.I.</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="toggle-container">
+                <label for="toggleOpenMode" style="color: white;">New Tab:</label>
+                <input type="checkbox" id="toggleOpenMode" onchange="toggleOpenMode()">
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid iframe-container">
+        <iframe frameborder="0" id="dashboardFrame" src="https://dashboard.transcanauto.com/#/superAdmin/vehicles/export/"></iframe>
+    </div>
+
+    <!-- ✅ Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        let openInNewTab = false;
+
+        function toggleOpenMode() {
+            openInNewTab = document.getElementById('toggleOpenMode').checked;
+        }
+
+        function handleNavigation(url, text) {
+            if (openInNewTab) {
+                window.open(url, '_blank');
+            } else {
+                reloadIframe(url, text);
+            }
+        }
+
+        function reloadIframe(url, text) {
+            var iframe = document.getElementById('dashboardFrame');
+            var selectedText = document.getElementById('selectedText');
+            iframe.src = '';
+            setTimeout(() => {
+                iframe.src = url;
+                if (selectedText) selectedText.textContent = 'Viewing: ' + text;
+            }, 100);
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll('.dropdown-submenu > a').forEach((element) => {
+                element.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    let submenu = this.nextElementSibling;
+                    if (submenu && submenu.classList.contains("dropdown-menu")) {
+                        submenu.classList.toggle("show");
+                    }
+                });
+            });
+
+            document.addEventListener('click', function (event) {
+                let isDropdown = event.target.closest('.dropdown');
+                if (!isDropdown) {
+                    document.querySelectorAll('.dropdown-menu').forEach(menu => menu.classList.remove('show'));
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
