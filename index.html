@@ -292,20 +292,19 @@
         openInNewTab = document.getElementById('toggleOpenMode').checked;
     }
 
-    // Function to handle link navigation
     function handleNavigation(url, text, category) {
         if (openInNewTab) {
             window.open(url, '_blank');
         } else {
             reloadIframe(url, text, category);
+            scrollToIframe(); // Automatically scroll to the iframe
         }
     }
 
-    // Function to reload iframe and update text
     function reloadIframe(url, text, category) {
         var iframe = document.getElementById('dashboardFrame');
         var selectedText = document.getElementById('selectedText');
-        
+
         iframe.src = ''; // Clear iframe before setting new src
         setTimeout(() => {
             iframe.src = url;
@@ -314,6 +313,16 @@
             }
         }, 100);
     }
+
+    // Function to scroll smoothly to the iframe
+    function scrollToIframe() {
+        const iframeContainer = document.querySelector(".iframe-container");
+        window.scrollTo({
+            top: iframeContainer.offsetTop,
+            behavior: "smooth"
+        });
+    }
+
 
     // Handling submenu dropdown toggling and auto-close behavior
     document.addEventListener("DOMContentLoaded", function () {
