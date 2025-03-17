@@ -181,7 +181,10 @@
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <h3 id="selectedText" style="color: white; font-size: 16px; margin: 0;">Viewing: In Yard</h3>
+                <h3 id="selectedText" style="color: white; font-size: 16px; margin: 0;">
+                    Viewing: ALL - In Yard
+                </h3>
+                
             </a>
 
             <!-- ✅ Toggle button for mobile menu -->
@@ -210,13 +213,30 @@
     </div>
 
     <div class="container-fluid iframe-container">
-        <iframe frameborder="0" id="dashboardFrame" src="https://dashboard.transcanauto.com/#/superAdmin/vehicles/export/"></iframe>
+        <iframe frameborder="0" 
+                id="dashboardFrame" 
+                src="https://dashboard.transcanauto.com/#/superAdmin/vehicles/yard/?query=U2FsdGVkX19H7UG3xgW4W7j2MZ6ahaOl9ABB5JkmfgwcyPj8NLjY%2FYvblXcOFmNSUobOMewU2djOaNcFMX0rKbbQWps911vDN94mFfrk8JHNVXL4Uek8xO8U%2Bo1tCAny">
+        </iframe>
     </div>
 
     <!-- ✅ Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 
-    <script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    // Default Page Setting
+    let defaultCategory = "ALL";
+    let defaultText = "In Yard";
+    let defaultURL = "https://dashboard.transcanauto.com/#/superAdmin/vehicles/yard/?query=U2FsdGVkX19H7UG3xgW4W7j2MZ6ahaOl9ABB5JkmfgwcyPj8NLjY%2FYvblXcOFmNSUobOMewU2djOaNcFMX0rKbbQWps911vDN94mFfrk8JHNVXL4Uek8xO8U%2Bo1tCAny";
+
+    let iframe = document.getElementById('dashboardFrame');
+    let selectedText = document.getElementById('selectedText');
+
+    // Ensure correct default display
+    iframe.src = defaultURL;
+    selectedText.textContent = `Viewing: ${defaultCategory} - ${defaultText}`;
+});
+
     async function loadLinks() {
         try {
             const response = await fetch("links.json");
@@ -241,10 +261,13 @@
                     link.classList.add("dropdown-item");
                     link.href = "#";
                     link.textContent = title;
+
+                    // Click event to handle navigation
                     link.onclick = function () {
-                        handleNavigation(data[category][title], title);
-                        return false;
+                        handleNavigation(data[category][title], title, category);
+                        return false; // Prevent default link action
                     };
+
                     listItem.appendChild(link);
                     subMenuList.appendChild(listItem);
                 }
@@ -258,118 +281,128 @@
         }
     }
 
+    // Ensure the function only runs once when the page loads
     document.addEventListener("DOMContentLoaded", loadLinks);
 
-        let openInNewTab = false;
+    // Global variable to track if a new tab should open
+    let openInNewTab = false;
 
-        function toggleOpenMode() {
-            openInNewTab = document.getElementById('toggleOpenMode').checked;
+    // Toggle function for opening in new tab
+    function toggleOpenMode() {
+        openInNewTab = document.getElementById('toggleOpenMode').checked;
+    }
+
+    // Function to handle link navigation
+    function handleNavigation(url, text, category) {
+        if (openInNewTab) {
+            window.open(url, '_blank');
+        } else {
+            reloadIframe(url, text, category);
         }
+    }
 
-        function handleNavigation(url, text) {
-            if (openInNewTab) {
-                window.open(url, '_blank');
-            } else {
-                reloadIframe(url, text);
+    // Function to reload iframe and update text
+    function reloadIframe(url, text, category) {
+        var iframe = document.getElementById('dashboardFrame');
+        var selectedText = document.getElementById('selectedText');
+        
+        iframe.src = ''; // Clear iframe before setting new src
+        setTimeout(() => {
+            iframe.src = url;
+            if (selectedText) {
+                selectedText.textContent = `Viewing: ${category} - ${text}`;
             }
-        }
+        }, 100);
+    }
 
-        function reloadIframe(url, text) {
-            var iframe = document.getElementById('dashboardFrame');
-            var selectedText = document.getElementById('selectedText');
-            iframe.src = '';
-            setTimeout(() => {
-                iframe.src = url;
-                if (selectedText) selectedText.textContent = 'Viewing: ' + text;
-            }, 100);
-        }
-
-        document.addEventListener("DOMContentLoaded", function () {
-            document.querySelectorAll('.dropdown-submenu > a').forEach((element) => {
-                element.addEventListener("click", function (e) {
-                    e.preventDefault();
-                    let submenu = this.nextElementSibling;
-                    if (submenu && submenu.classList.contains("dropdown-menu")) {
-                        submenu.classList.toggle("show");
-                    }
-                });
-            });
-
-            document.addEventListener('click', function (event) {
-                let isDropdown = event.target.closest('.dropdown');
-                if (!isDropdown) {
-                    document.querySelectorAll('.dropdown-menu').forEach(menu => menu.classList.remove('show'));
+    // Handling submenu dropdown toggling and auto-close behavior
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll('.dropdown-submenu > a').forEach((element) => {
+            element.addEventListener("click", function (e) {
+                e.preventDefault();
+                let submenu = this.nextElementSibling;
+                if (submenu && submenu.classList.contains("dropdown-menu")) {
+                    submenu.classList.toggle("show");
                 }
             });
         });
 
-        (function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            if (urlParams.has("autoFilter")) {
-                console.log("Auto-filter detected. Running script...");
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', function (event) {
+            let isDropdown = event.target.closest('.dropdown');
+            if (!isDropdown) {
+                document.querySelectorAll('.dropdown-menu').forEach(menu => menu.classList.remove('show'));
+            }
+        });
+    });
 
-                function applyDateFilter() {
-                    console.log("Applying date filter...");
+    // Auto-filter logic (if applicable)
+    (function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has("autoFilter")) {
+            console.log("Auto-filter detected. Running script...");
 
-                    let filterButton = document.querySelector('th:nth-child(8) div > div > div > button');
-                    if (filterButton) {
-                        console.log("Filter button found, clicking...");
-                        filterButton.click();
-                    } else {
-                        console.log("Filter button NOT found.");
-                    }
+            function applyDateFilter() {
+                console.log("Applying date filter...");
 
-                    setTimeout(() => {
-                        let firstCalendar = document.querySelector('th:nth-child(8) div > div > div > ul > li:nth-child(1) form fieldset:nth-child(1) div > input');
-                        if (firstCalendar) {
-                            console.log("First calendar found, setting date...");
-                            firstCalendar.click();
-                            setTimeout(() => {
-                                let date1 = new Date();
-                                date1.setHours(date1.getHours() - 48);
-                                firstCalendar.value = date1.toISOString().split('T')[0];
-                                firstCalendar.dispatchEvent(new Event('change'));
-                            }, 500);
-                        } else {
-                            console.log("First calendar NOT found.");
-                        }
-                    }, 1000);
-
-                    setTimeout(() => {
-                        let secondCalendar = document.querySelector('th:nth-child(8) div > div > div > ul > li:nth-child(1) form fieldset:nth-child(2) div > input');
-                        if (secondCalendar) {
-                            console.log("Second calendar found, setting date...");
-                            secondCalendar.click();
-                            setTimeout(() => {
-                                let date2 = new Date();
-                                secondCalendar.value = date2.toISOString().split('T')[0];
-                                secondCalendar.dispatchEvent(new Event('change'));
-                            }, 500);
-                        } else {
-                            console.log("Second calendar NOT found.");
-                        }
-                    }, 2000);
-
-                    setTimeout(() => {
-                        let applyButton = document.querySelector('th:nth-child(8) div > div > div > ul div div button:nth-child(1)');
-                        if (applyButton) {
-                            console.log("Apply button found, clicking...");
-                            applyButton.click();
-                        } else {
-                            console.log("Apply button NOT found.");
-                        }
-                    }, 3000);
+                let filterButton = document.querySelector('th:nth-child(8) div > div > div > button');
+                if (filterButton) {
+                    console.log("Filter button found, clicking...");
+                    filterButton.click();
+                } else {
+                    console.log("Filter button NOT found.");
                 }
 
-                document.addEventListener("DOMContentLoaded", function() {
-                    console.log("DOM fully loaded, running applyDateFilter...");
-                    applyDateFilter();
-                });
-            } else {
-                console.log("No auto-filter detected. Normal page load.");
-            }
-        })();
-    </script>
+                setTimeout(() => {
+                    let firstCalendar = document.querySelector('th:nth-child(8) div > div > div > ul > li:nth-child(1) form fieldset:nth-child(1) div > input');
+                    if (firstCalendar) {
+                        console.log("First calendar found, setting date...");
+                        firstCalendar.click();
+                        setTimeout(() => {
+                            let date1 = new Date();
+                            date1.setHours(date1.getHours() - 48);
+                            firstCalendar.value = date1.toISOString().split('T')[0];
+                            firstCalendar.dispatchEvent(new Event('change'));
+                        }, 500);
+                    } else {
+                        console.log("First calendar NOT found.");
+                    }
+                }, 1000);
 
+                setTimeout(() => {
+                    let secondCalendar = document.querySelector('th:nth-child(8) div > div > div > ul > li:nth-child(1) form fieldset:nth-child(2) div > input');
+                    if (secondCalendar) {
+                        console.log("Second calendar found, setting date...");
+                        secondCalendar.click();
+                        setTimeout(() => {
+                            let date2 = new Date();
+                            secondCalendar.value = date2.toISOString().split('T')[0];
+                            secondCalendar.dispatchEvent(new Event('change'));
+                        }, 500);
+                    } else {
+                        console.log("Second calendar NOT found.");
+                    }
+                }, 2000);
+
+                setTimeout(() => {
+                    let applyButton = document.querySelector('th:nth-child(8) div > div > div > ul div div button:nth-child(1)');
+                    if (applyButton) {
+                        console.log("Apply button found, clicking...");
+                        applyButton.click();
+                    } else {
+                        console.log("Apply button NOT found.");
+                    }
+                }, 3000);
+            }
+
+            document.addEventListener("DOMContentLoaded", function() {
+                console.log("DOM fully loaded, running applyDateFilter...");
+                applyDateFilter();
+            });
+        } else {
+            console.log("No auto-filter detected. Normal page load.");
+        }
+    })();
+</script>
 </body>
 </html>
