@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png">
+    <!-- ✅ Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+<style>
+    /* ✅ Navbar Styling */
+
+    .navbar-nav .nav-item .nav-link {
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+    }
+
+    .navbar-nav .nav-item .nav-link:hover {
+        background: #495057; /* Slightly different from navbar */
+        color: #ffffff;
+        border-radius: 5px;
+    }
+
+    .navbar {
+    margin: 10px auto;
+    border-radius: 10px;
+    width: 95%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background-color: #343a40;
+}
+
+
+    /* ✅ Main Dropdown Menu Styling */
+    .dropdown-menu {
+        background-color: #343a40; /* Dark background */
+        border: 1px solid #495057;
+        min-width: 220px;
+        padding: 0;
+        border-radius: 5px;
+    }
+
+    /* ✅ Submenu Styling (Different Color) */
+    .dropdown-submenu .dropdown-menu {
+        background-color: #495057; /* Lighter gray for submenus */
+        border: 1px solid #6c757d;
+    }
+
+    /* Dropdown Item Styling */
+    .dropdown-item {
+        color: white !important;
+        padding: 10px 15px;
+        font-size: 14px;
+        transition: background 0.3s ease-in-out;
+    }
+
+    /* ✅ Different Hover Effects */
+    .dropdown-item:hover {
+        background-color: #495057 !important; /* Darker hover effect for main menu */
+        color: #ffffff !important;
+    }
+
+    .dropdown-submenu .dropdown-item:hover {
+        background-color: #6c757d !important; /* Even lighter hover effect for submenus */
+        color: #ffffff !important;
+    }
+
+    /* ✅ Submenu Positioning */
+    .dropdown-submenu {
+        position: relative;
+    }
+
+    /* Submenus appear below the parent (Mobile View) */
+    .dropdown-submenu .dropdown-menu {
+        display: none;
+        position: absolute;
+        left: 100%;
+        top: 0;
+        margin-left: 0.2rem;
+        border-radius: 5px;
+    }
+
+    /* Show Submenu on Hover (Desktop Only) */
+    .dropdown-submenu:hover > .dropdown-menu {
+        display: block;
+    }
+
+    /* Submenu Arrow Indicator */
+    .dropdown-submenu > .dropdown-item::after {
+        content: " ▶";
+        float: right;
+        font-size: 12px;
+    }
+
+    /* ✅ Mobile View Improvements */
+    @media (max-width: 992px) {
+        .navbar-nav {
+            width: 100%;
+        }
+
+        /* ✅ Dropdown in Mobile Mode (Full Width & Stacked) */
+        .dropdown-menu {
+            position: static;
+            width: 100%;
+            background-color: #343a40; /* Keep dark theme */
+        }
+
+        /* ✅ Submenus appear stacked (no floating to the side) */
+        .dropdown-submenu .dropdown-menu {
+            display: none;
+            position: static;
+            width: 100%;
+            margin: 0;
+            background-color: #495057; /* Keep submenu color consistent */
+        }
+
+        /* ✅ Show submenu when clicking */
+        .dropdown-submenu.show > .dropdown-menu {
+            display: block !important;
+        }
+
+        /* ✅ Change Arrow Direction for Mobile */
+        .dropdown-submenu > .dropdown-item::after {
+            content: "▼";
+        }
+
+        /* ✅ Navbar Toggle Button Styling */
+        .navbar-toggler {
+            border: 1px solid white;
+            background-color: #495057;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .navbar-toggler-icon {
+            filter: invert(1);
+        }
+
+        /* Fix Collapsed Menu Spacing */
+        .collapse.show {
+            background-color: #343a40;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    }
+
+    /* ✅ Iframe Container Styling */
+    .iframe-container {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+    
+    .nav-link {
+    display: block;
+    padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+    font-size: var(--bs-nav-link-font-size);
+    font-weight: var(--bs-nav-link-font-weight);
+    color: white;
+    text-decoration: none;
+    background: 0 0;
+    border: 0;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+}
+
+</style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <h3 id="selectedText" style="color: white; font-size: 16px; margin: 0;">Viewing: In Yard</h3>
+            </a>
+
+            <!-- ✅ Toggle button for mobile menu -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://akvic1927.github.io/QAS---In-Yard/">Adesa Form</a>
+                    </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dashboardDropdown" role="button" data-bs-toggle="dropdown">
+                                Dashboard Links
+                            </a>
+                            <ul class="dropdown-menu" id="dynamicMenu"></ul>  <!-- ✅ Links will be inserted here -->
+                        </li>                        
+                </ul>
+                <div class="toggle-container">
+                    <label for="toggleOpenMode" style="color: white;">New Tab:</label>
+                    <input type="checkbox" id="toggleOpenMode" onchange="toggleOpenMode()">
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div class="container-fluid iframe-container">
+        <iframe frameborder="0" id="dashboardFrame" src="https://dashboard.transcanauto.com/#/superAdmin/vehicles/export/"></iframe>
+    </div>
+
+    <!-- ✅ Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+    async function loadLinks() {
+        try {
+            const response = await fetch("links.json");
+            const data = await response.json();
+            const menu = document.getElementById("dynamicMenu");
+
+            for (const category in data) {
+                let submenu = document.createElement("li");
+                submenu.classList.add("dropdown-submenu");
+
+                let categoryLink = document.createElement("a");
+                categoryLink.classList.add("dropdown-item", "dropdown-toggle");
+                categoryLink.href = "#";
+                categoryLink.textContent = category;
+
+                let subMenuList = document.createElement("ul");
+                subMenuList.classList.add("dropdown-menu");
+
+                for (const title in data[category]) {
+                    let listItem = document.createElement("li");
+                    let link = document.createElement("a");
+                    link.classList.add("dropdown-item");
+                    link.href = "#";
+                    link.textContent = title;
+                    link.onclick = function () {
+                        handleNavigation(data[category][title], title);
+                        return false;
+                    };
+                    listItem.appendChild(link);
+                    subMenuList.appendChild(listItem);
+                }
+
+                submenu.appendChild(categoryLink);
+                submenu.appendChild(subMenuList);
+                menu.appendChild(submenu);
+            }
+        } catch (error) {
+            console.error("Error loading links:", error);
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", loadLinks);
+
+        let openInNewTab = false;
+
+        function toggleOpenMode() {
+            openInNewTab = document.getElementById('toggleOpenMode').checked;
+        }
+
+        function handleNavigation(url, text) {
+            if (openInNewTab) {
+                window.open(url, '_blank');
+            } else {
+                reloadIframe(url, text);
+            }
+        }
+
+        function reloadIframe(url, text) {
+            var iframe = document.getElementById('dashboardFrame');
+            var selectedText = document.getElementById('selectedText');
+            iframe.src = '';
+            setTimeout(() => {
+                iframe.src = url;
+                if (selectedText) selectedText.textContent = 'Viewing: ' + text;
+            }, 100);
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll('.dropdown-submenu > a').forEach((element) => {
+                element.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    let submenu = this.nextElementSibling;
+                    if (submenu && submenu.classList.contains("dropdown-menu")) {
+                        submenu.classList.toggle("show");
+                    }
+                });
+            });
+
+            document.addEventListener('click', function (event) {
+                let isDropdown = event.target.closest('.dropdown');
+                if (!isDropdown) {
+                    document.querySelectorAll('.dropdown-menu').forEach(menu => menu.classList.remove('show'));
+                }
+            });
+        });
+
+        (function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has("autoFilter")) {
+                console.log("Auto-filter detected. Running script...");
+
+                function applyDateFilter() {
+                    console.log("Applying date filter...");
+
+                    let filterButton = document.querySelector('th:nth-child(8) div > div > div > button');
+                    if (filterButton) {
+                        console.log("Filter button found, clicking...");
+                        filterButton.click();
+                    } else {
+                        console.log("Filter button NOT found.");
+                    }
+
+                    setTimeout(() => {
+                        let firstCalendar = document.querySelector('th:nth-child(8) div > div > div > ul > li:nth-child(1) form fieldset:nth-child(1) div > input');
+                        if (firstCalendar) {
+                            console.log("First calendar found, setting date...");
+                            firstCalendar.click();
+                            setTimeout(() => {
+                                let date1 = new Date();
+                                date1.setHours(date1.getHours() - 48);
+                                firstCalendar.value = date1.toISOString().split('T')[0];
+                                firstCalendar.dispatchEvent(new Event('change'));
+                            }, 500);
+                        } else {
+                            console.log("First calendar NOT found.");
+                        }
+                    }, 1000);
+
+                    setTimeout(() => {
+                        let secondCalendar = document.querySelector('th:nth-child(8) div > div > div > ul > li:nth-child(1) form fieldset:nth-child(2) div > input');
+                        if (secondCalendar) {
+                            console.log("Second calendar found, setting date...");
+                            secondCalendar.click();
+                            setTimeout(() => {
+                                let date2 = new Date();
+                                secondCalendar.value = date2.toISOString().split('T')[0];
+                                secondCalendar.dispatchEvent(new Event('change'));
+                            }, 500);
+                        } else {
+                            console.log("Second calendar NOT found.");
+                        }
+                    }, 2000);
+
+                    setTimeout(() => {
+                        let applyButton = document.querySelector('th:nth-child(8) div > div > div > ul div div button:nth-child(1)');
+                        if (applyButton) {
+                            console.log("Apply button found, clicking...");
+                            applyButton.click();
+                        } else {
+                            console.log("Apply button NOT found.");
+                        }
+                    }, 3000);
+                }
+
+                document.addEventListener("DOMContentLoaded", function() {
+                    console.log("DOM fully loaded, running applyDateFilter...");
+                    applyDateFilter();
+                });
+            } else {
+                console.log("No auto-filter detected. Normal page load.");
+            }
+        })();
+    </script>
+
+</body>
+</html>
