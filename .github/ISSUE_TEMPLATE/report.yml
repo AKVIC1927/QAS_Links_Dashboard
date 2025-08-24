@@ -1,0 +1,35 @@
+name: Report
+description: Submit a report
+title: "[Report]: "
+labels: []
+body:
+  - type: dropdown
+    id: section
+    attributes:
+      label: Section
+      options:
+        - Docs
+        - Backend
+        - Frontend
+    validations:
+      required: true
+
+  - type: dropdown
+    id: label
+    attributes:
+      label: Label
+      options:
+        - bug
+        - enhancement
+        - question
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: URL
+      description: Link to the page/resource
+      placeholder: https://example.com
+    validations:
+      required: true
