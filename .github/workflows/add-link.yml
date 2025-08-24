@@ -1,0 +1,94 @@
+name: Add link from issue
+on:
+  issues:
+    types: [labeled]
+
+# Make sure your repo has Actions → General → Workflow permissions set to "Read and write"
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  add:
+    # Only run when the issue has the "add-link" label
+    if: contains(github.event.issue.labels.*.name, 'add-link')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Parse issue fields
+        id: parse
+        shell: bash
+        run: |
+          body="${{ github.event.issue.body }}"
+          get() { echo "$body" | sed -n "s/^**$1:**[[:space:]]*//p" | head -n1 | sed 's/\r$//' ; }
+          echo "title=$(get Title)"   >> $GITHUB_OUTPUT
+          echo "url=$(get URL)"       >> $GITHUB_OUTPUT
+          echo "cat=$(get 'Category (optional)')"  >> $GITHUB_OUTPUT
+          echo "icon=$(get 'Icon URL (optional)')" >> $GITHUB_OUTPUT
+
+      - name: Update links.json (append entry; handle multiple shapes)
+        run: |
+          node - <<'NODE'
+          const fs = require('fs');
+
+          // Read current file
+          const path = 'links.json';
+          const raw  = fs.readFileSync(path, 'utf8');
+          let data;
+          try { data = JSON.parse(raw); } catch (e) {
+            throw new Error('links.json is not valid JSON');
+          }
+
+          // Build new entry from parsed fields
+          const entry = {
+            title: process.env.TITLE,
+            url: process.env.URL,
+            category: process.env.CAT || "",
+            icon: process.env.ICON || ""
+          };
+          if (!entry.title || !entry.url) {
+            throw new Error('Missing Title or URL from the issue form');
+          }
+
+          // Locate array to push into: supports [..] or {links:[..]}
+          let arr;
+          if (Array.isArray(data)) {
+            arr = data;
+          } else if (data && Array.isArray(data.links)) {
+            arr = data.links;
+          } else {
+            // If structure unknown, normalize to {links:[..]}
+            data = { links: [] };
+            arr = data.links;
+          }
+
+          // Avoid duplicates by URL
+          if (arr.some(x => (x.url || '').trim() === entry.url.trim())) {
+            console.log('Link already exists, skipping add.');
+          } else {
+            arr.push(entry);
+          }
+
+          fs.writeFileSync(path, JSON.stringify(data, null, 2));
+          NODE
+        env:
+          TITLE: ${{ steps.parse.outputs.title }}
+          URL:   ${{ steps.parse.outputs.url }}
+          CAT:   ${{ steps.parse.outputs.cat }}
+          ICON:  ${{ steps.parse.outputs.icon }}
+
+      - name: Create PR
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "chore: add link via issue #${{ github.event.issue.number }}"
+          title: "Add link: ${{ steps.parse.outputs.title }}"
+          branch: "bot/add-link-${{ github.event.issue.number }}"
+          body: |
+            Adds link proposed in #${{ github.event.issue.number }}
+
+            Title:  ${{ steps.parse.outputs.title }}
+            URL:    ${{ steps.parse.outputs.url }}
+            Cat:    ${{ steps.parse.outputs.cat }}
+            Icon:   ${{ steps.parse.outputs.icon }}
+          labels: add-link
