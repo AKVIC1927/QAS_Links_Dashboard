@@ -1,0 +1,38 @@
+name: "Add a link"
+description: Propose a new link for links.json
+title: "Add link: "
+labels: ["add-link"]
+body:
+  - type: dropdown
+    id: section
+    attributes:
+      label: Section
+      options:
+        - ALL
+        - US
+        - Domestic
+        - IN USA
+        - WORK ORDER
+    validations:
+      required: true
+  - type: input
+    id: label
+    attributes:
+      label: Label (shown on the site, e.g., "Ford Recall")
+      placeholder: e.g., "My New Link"
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: URL
+      placeholder: https://...
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes (optional)
+      placeholder: Any context for reviewers (optional)
+    validations:
+      required: false
