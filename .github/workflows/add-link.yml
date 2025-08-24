@@ -1,9 +1,8 @@
 name: Add link from issue
 on:
   issues:
-    types: [labeled]
+    types: [opened, labeled]
 
-# Settings → Actions → General → Workflow permissions → set to "Read and write"
 permissions:
   contents: write
   pull-requests: write
@@ -18,23 +17,36 @@ jobs:
       - name: Update links.json
         env:
           BODY: ${{ github.event.issue.body }}
+          TITLE: ${{ github.event.issue.title }}
         run: |
           node - <<'NODE'
           const fs = require('fs');
 
           const body = process.env.BODY || "";
+          const title = process.env.TITLE || "";
 
-          // Extract Issue Form values from the rendered markdown:
-          // The form renders as headings like "### Section", then the value on the next line(s).
-          function field(label) {
+          // Try to read values from Issue Forms (### Heading\nValue)
+          function getByHeading(label) {
             const re = new RegExp(`###\\s*${label}\\s*\\n([\\s\\S]*?)(?=\\n###|$)`, 'i');
             const m = body.match(re);
             return m ? m[1].trim() : '';
           }
+          // Fallback for plain markdown: "Label: value"
+          function getByColon(label) {
+            const re = new RegExp(`^\\s*\\**${label}\\**\\s*:\\s*(.+)$`, 'im');
+            const m = body.match(re);
+            return m ? m[1].trim() : '';
+          }
 
-          const section = field('Section');
-          const label   = field('Label');
-          const url     = field('URL');
+          let section = getByHeading('Section') || getByColon('Section');
+          let label   = getByHeading('Label')   || getByColon('Label');
+          let url     = getByHeading('URL')     || getByColon('URL');
+
+          // Last-chance: if URL is in the title
+          if (!url) {
+            const mt = title.match(/https?:\/\/\S+/i);
+            if (mt) url = mt[0];
+          }
 
           if (!section || !label || !url) {
             throw new Error('Missing Section, Label, or URL in the issue form.');
@@ -44,29 +56,26 @@ jobs:
           if (!fs.existsSync(path)) throw new Error('links.json not found at repo root.');
           const data = JSON.parse(fs.readFileSync(path, 'utf8'));
 
-          // Ensure the section exists and is an object
+          // Ensure section object exists
           if (!data[section] || typeof data[section] !== 'object' || Array.isArray(data[section])) {
             data[section] = {};
           }
-
           const sec = data[section];
 
-          // Avoid duplicates: if same URL already present under any label in section, skip
-          const already = Object.entries(sec).find(([k, v]) => String(v).trim() === url.trim());
-          if (already) {
-            console.log(`URL already exists in section "${section}" under label "${already[0]}". Skipping add.`);
-          } else {
-            // If label exists with a different URL, append a unique suffix
-            let finalLabel = label;
-            let i = 2;
+          // Avoid duplicates by URL
+          const exists = Object.entries(sec).find(([k,v]) => String(v).trim() === url.trim());
+          if (!exists) {
+            let finalLabel = label.trim();
+            let n = 2;
             while (Object.prototype.hasOwnProperty.call(sec, finalLabel) && sec[finalLabel] !== url) {
-              finalLabel = `${label} (${i++})`;
+              finalLabel = `${label} (${n++})`;
             }
             sec[finalLabel] = url;
 
-            // Optional: keep labels sorted alphabetically for neat diffs
-            const sorted = Object.fromEntries(Object.entries(sec).sort((a, b) => a[0].localeCompare(b[0])));
-            data[section] = sorted;
+            // Keep section keys sorted
+            data[section] = Object.fromEntries(Object.entries(sec).sort((a,b) => a[0].localeCompare(b[0])));
+          } else {
+            console.log(`URL already exists in section "${section}" under label "${exists[0]}".`);
           }
 
           fs.writeFileSync(path, JSON.stringify(data, null, 2) + '\n');
@@ -78,7 +87,5 @@ jobs:
           commit-message: "chore: add link via issue #${{ github.event.issue.number }}"
           title: "Add link from issue #${{ github.event.issue.number }}"
           branch: "bot/add-link-${{ github.event.issue.number }}"
-          body: |
-            Adds/updates links in `links.json` based on issue #${{ github.event.issue.number }}.
-            (Section/Label/URL taken from the Issue Form.)
+          body: "Updates links.json based on issue #${{ github.event.issue.number }}."
           labels: add-link
