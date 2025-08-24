@@ -1,11 +1,11 @@
 {
     "ALL": {
-      "Recalls":"https://dashboard.transcanauto.com/#/superAdmin/vehicles/business/?query=U2FsdGVkX18V3%2BR0CBshSjHtViGOu1MDnAKRnXwUFXw0VzhaeMTmd9f8hybUOI7lbEkSba8pBI5JcwncS5Od2MdgPuzK1XL5e6IC%2BMumm9WTV6btG%2Bv7kw7IuEcmGDtDv0%2Bfi4RlsEvPi6FN3gr%2B8A%3D%3D",
+      "Recalls":"https://dashboard.transcanauto.com/#/superAdmin/vehicles/export/?query=U2FsdGVkX1%2BR1p5379XG9bb2GWqIMQY5j8%2B79ituYq3MNI%2FypV5%2FKsqUrE6SSn1f52eSEfdiJlbVRVIm1QGxS8VOoSNFYEhE69Xp8%2F7hiJRIdFReyF510ZX1u%2FE1Y5zFhjRaz69HmwfV5IaJOcJvVSCGkUf8A67Hnjcm%2ByWTPwMxemFdf3erFYSJNP2D4nNaUsSQlHnlyB2szysgQBosz7u8h2Wxmqn6kCisub3TWE0wCNr7B9YzbxxygQdICzMUJMBpxRjp3rebq8fvDvjZyDPcSUprothGU8kzoaBsV6NhX1xa44xCz3eNHMQ6USiW/?query=U2FsdGVkX1%2FW8nbPETSbtkWl8IyhJB4CIZlEhXSrdLCp%2FhaigSILad9TQ1g9zwtpqob1G5Ew5FVvYRzybPOwbtDwZs5FNbGSPFtfzTjVs89mxJVXkEcyyTvPIsv%2BTSSIAsVyLkj9xBwqjU4EqVbS0XN2AoNCJHjoTH1Lo7a1G%2Bp3JxAuYOvN%2FCAXjacvXRCIbnXZCY4gNOmwz0CC0u2HAKrNwPtKOLBSaybP6SgzPhItjc%2Fg6WISsqniYZx%2BR%2F%2B8JLAM2A8qd%2BgewR%2Bc3v0LYSSZXKlCq7kuX46bifJwR7b8FTXgEGBcbtTL9z%2F6R6yXYIjuDkzhoXhCZegn3e6zdA%3D%3D",
       "New Payment":"https://dashboard.transcanauto.com/#/superAdmin/vehicles/business/?query=U2FsdGVkX1%2BG%2BzD9aZkisQbAbObJnIeVzY3rb9H2ExrE0%2FYm6t%2BTo9xuWFtXX6ynLiTrSUrf2ifnHA%2FRBpEA9Sk4nHjwnFSfdk4VGzo%2FTWQXwL8R%2Bt9%2B0yTM6iPuqk5Mu8VBFXe6G%2FE9DLUbJ8NCh6vnmrtDxqWXb0z9ExbTNRk%3D",
       "ALL IN TRANSIT TO QAS": "https://dashboard.transcanauto.com/#/superAdmin/vehicles/yard/?query=U2FsdGVkX1%2FUEjy1Ll6Vp3NT2QdHtUcD%2F6srmJyrnpc%2F74pn1sWxlSQtYsvEoS2X%2B7MXlzhoNvilWRIga86WLaUqywDWFHAPvww37A89AuK31p7o2V%2BecheKx%2FKnhruHVVyzapsO%2BzQK%2B%2FoMCfOblQ%3D%3D",
       "ALL IN YARD": "https://dashboard.transcanauto.com/#/superAdmin/vehicles/yard/?query=U2FsdGVkX19URpzVgr9LRreNJOgxeOF2w9ibdsGqG4ijoLWsgbqDobHM6tyyMMoXfe1RGp2ea6p7BvJQ%2Bt4B3csD7FGf%2BP5YBnP1CwwW0DHiSLx8Z5LRCGpRwtSI5kd2",
       "ALL NO V.I.": "https://dashboard.transcanauto.com/#/superAdmin/vehicles/yard/?query=U2FsdGVkX18v%2F5A6a7ITwpciakW2gAsxnKGnkIiFMLRsTrgevKleXbmN0Kjfe7RzePKxOOv7zIDN0HXxMkrFMrw%2B1PqcW3qjuD36nCEfRb4RvI%2FhUNtDzOVHSCrJA1qZ%2FwnDMyfzP3kq0R7BkNvPRj78DddUr0OY23LFEeRTVc4%3D",
-      "Ford Recall" : "https://dashboard.transcanauto.com/#/superAdmin/vehicles/admin/?query=U2FsdGVkX1%2FoyaTYJAFeD48Tn%2FM8AP6C%2FHDgqvFbwsQRSOFD2KeNblzCHYBReR3qZfIPcrIx9zEevPsupuvCe8NHC2H5YVQu2R0Ee2XhsbO%2BOuCiRl8KnUSlYeaPUfFjmKfrodpDzMopWrC%2Fure4XW3LIUzuJGqF2qbSLlKAyFQ%3D"
+      "Ford Recall" : "https://dashboard.transcanauto.com/#/superAdmin/vehicles/export/?query=U2FsdGVkX1%2BR1p5379XG9bb2GWqIMQY5j8%2B79ituYq3MNI%2FypV5%2FKsqUrE6SSn1f52eSEfdiJlbVRVIm1QGxS8VOoSNFYEhE69Xp8%2F7hiJRIdFReyF510ZX1u%2FE1Y5zFhjRaz69HmwfV5IaJOcJvVSCGkUf8A67Hnjcm%2ByWTPwMxemFdf3erFYSJNP2D4nNaUsSQlHnlyB2szysgQBosz7u8h2Wxmqn6kCisub3TWE0wCNr7B9YzbxxygQdICzMUJMBpxRjp3rebq8fvDvjZyDPcSUprothGU8kzoaBsV6NhX1xa44xCz3eNHMQ6USiW/?query=U2FsdGVkX19i3UBarWIVmGMQG2wUueFg3q3BYDq4iODA%2B1bvEoeZ4n37rf69oztW9vqmjBhtFM75H8Q2jNYczC7qJiruT2MowkX%2F1JkJ3%2F7%2F2oYWH1qpDThwkOnFO7dmvHPyD9P%2BQ1%2FOMx21h49%2FHM8Vc%2BPoJ%2BSqVAjPa41wJo4ZWCu6CfZFUR7tTU2R02PhUld5N7EzRWqgszJOJgRBxzvEx%2FkLCCI0615MAUce2fqGVvY2Mc6pxFtFZ%2BPCinVaF05nn%2FQAoqrRRMkyRpbmRmMHw1pvHg5zGiPuS3JiQ3iod0wBA2lbK0pCXVtZU%2BxaEq3p1ActpekH%2FwgN6Hq%2Bxl8toX9l3Fuvfn1lRgpmQec%3D"
     },
     "US": {
       "GENERAL": "https://dashboard.transcanauto.com/#/superAdmin/vehicles/yard/?query=U2FsdGVkX1%2F6sYM%2FYR7WggZqZUj5B9tlIJ%2BNLniI8qwm1Gfk0XAVCIRYOkTPC4Ga05NOO7%2BjX%2BeQJhzGWWcakGLKnmO2oBvx9UlYNOxChKFMKCCpolhJAQYZx326VJY%2BJX4HlV5E2XBOsHlpgTcKmi8Snc%2F3H92Iy%2BV4ZWwnoeg%3D",
@@ -42,5 +42,6 @@
         "AT DEALER": "https://dashboard.transcanauto.com/#/superAdmin/vehicles/admin/?query=U2FsdGVkX1%2Fd326no1p3VXSMB452tPcccYP%2BwJCe6feiPACG8sKVWHUThKZgecZzDLvr8pDRAqrEmSMFtMUOI4uxQu7iX%2Bg9ZFSlMbgMGRfcXSyzCg9rXfWC4bDiVqg7CpUAIznLTcYVYyPSq8l9fg%3D%3D"
     }
 }
+
 
 
