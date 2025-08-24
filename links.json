@@ -29,7 +29,8 @@
         "At QAS - PAID":"https://dashboard.transcanauto.com/#/superAdmin/vehicles/yard/?query=U2FsdGVkX18ArDP8VLwBZHxprfRlN1kBmTZaGkSzxwB8B5NJvy17N8M9UI2%2Fm5zpNw1NmW6fXi3HI0tH69TQWrs%2BM7dBIlywk0uKz0frdJS2W4fHIGQT021L1tCyfU%2FvANpv9kJPar0lVL9VrbAlpmwY%2BsTPUS%2FX3DGAifG9RgkXSVVbHPHW7CPFog2%2F18LO",
         "Fahey - All In Yard":"https://dashboard.transcanauto.com/#/superAdmin/vehicles/admin/?query=U2FsdGVkX19FQyYfswLCCgahrBEosiRqFKHTmh97wcjNsZQTkDXxIfVfrp8vvzDnilzDLjuU4cX8Z5M2QhX5HKQYHCMtg5eKfaU%2FzSQdW3VtVqZrq0r1w4hZz07Smx2Nn5sq2Ah3zhqhdmzqiCqxTAzADU3dHSN0fPMMVmUojn8%3D",
         "Fahey - Recall":"https://dashboard.transcanauto.com/#/superAdmin/vehicles/admin/?query=U2FsdGVkX1%2FKjAzhqR1S10KosgaT2da952MokmbD5NouPZKZY%2BjGQ8IuwKvy1WPSFlh2gTrWmFZpEjfth9vthUKIT7Dt9wZBix56RiftE6UuN32Z1i%2FuDs32Iz5i8FTw683gUtQA%2Fop69kojmYN59p4x5HnK3SUOHPDGBLgQF30w8mKQrhvMZFQhF29IP6X8",
-        "Fahey - Not Invoiced":"https://dashboard.transcanauto.com/#/superAdmin/vehicles/admin/?query=U2FsdGVkX1%2BrF%2FEhAkuLquBlEnpX0hL6SU3XWLtWmChBuLQWk%2FViqmp1q2DB9ADpLQUAByyU5ubbfMAlrRC38WLD2o3y0ww1Z7rrfbhaPm8M0QuwWrmkA9aZaDY7qCLT%2FHz24phlXT0L1lbonWqiaFy7p%2BmkRfEv4PUBc%2F1kpOsteKDx2rLaN9ZXCAwNH1o7"
+        "Fahey - Not Invoiced":"https://dashboard.transcanauto.com/#/superAdmin/vehicles/admin/?query=U2FsdGVkX1%2BrF%2FEhAkuLquBlEnpX0hL6SU3XWLtWmChBuLQWk%2FViqmp1q2DB9ADpLQUAByyU5ubbfMAlrRC38WLD2o3y0ww1Z7rrfbhaPm8M0QuwWrmkA9aZaDY7qCLT%2FHz24phlXT0L1lbonWqiaFy7p%2BmkRfEv4PUBc%2F1kpOsteKDx2rLaN9ZXCAwNH1o7",
+        "Landry - Sold (in Yard)" :"https://dashboard.transcanauto.com/#/superAdmin/vehicles/business/?query=U2FsdGVkX18S6UosYRP9Fa6drlp0p4oHAMpDPW%2FS9DDxRnjyrH7QlFFEvXjc1dF8wM3gJirQVnn9X82ZE4oOmNAzWjIKyN3M0fmndaYgth9rPlV33wnhOzFXKZKEU1IOyp9Yzg%2Ftto52bKtXMKfUHUr0tlUr9mpJn%2FBi1stnkAwjYAdjew7bi1UwuDiA93fP"
     },
     "IN USA": {
       "All" : "https://dashboard.transcanauto.com/#/superAdmin/vehicles/admin/?query=U2FsdGVkX195qLGmi5oIXCedAvmUO3EhhaRtfzSLECkrCWVwXH9pLUdoVrbEft%2BlBwo%2F7WgC9PDuC0meyq1bc3YnLIeK%2BDCW3N6VHtf790QUzqOJxC9esyCA4m7SBTfsUk9z%2BjYSedTeopIgzeyTPhkp8lGmt859mJOMgMKWnJEyUFaOdC2Qgz0IvhqiRLK6Cd2cLtBT5zvOVqbmbPXYBm1w7Y2gb3YiIHhNpT23TCfAu1xwHnps8Xk3oJG9%2BnQmKk%2Fc0n1D1ixjaMxxtESAdTiTfSovcSaZEfgdM1Tiwi5L%2ByzOMQml3xwbbGT85xxBLL4vlVyFJoDMaXEj38%2FZIpZbkoBIYt9tcB5do60QYMR9VoVYn4mOrBhjY%2BP7M6fqUwtF8udoAVLDJB7KofJqpUEZm56ZOJa%2Fy2hhCEHd9xiFxvrtaKSFfCxvCOSGWlJhg%2FX4IlOAuqdK9Q6U08q8gcy8O6Gdnx3Y6%2Fz%2BiNVQDwWooqLB7R3zdeXdCpgYRk54ecZlIgAC7JQ6liw6WojQvWZOCEP459md8ix8jNVs5GWZtS1DXeXenhnUHABTIiJ6rgIyBzcWavrBbohGMqXHZnLjYDAT0LudHVUDZzNzhi70EsH%2F4LZ1FaJrKQ%2BWSReFju1chmlAGAC5QsZpD3e7MbXt97szrJY7CeCk0JyeMAYP7KoI8e40nmh3gSJsMGdHRG%2F7kiYlG239ojErtS%2FQzMwhZZdqT%2FTDtU4anKsmVrxc0axQ1QSTiuyPh0Y%2FLcCm",
@@ -42,6 +43,7 @@
         "AT DEALER": "https://dashboard.transcanauto.com/#/superAdmin/vehicles/admin/?query=U2FsdGVkX1%2Fd326no1p3VXSMB452tPcccYP%2BwJCe6feiPACG8sKVWHUThKZgecZzDLvr8pDRAqrEmSMFtMUOI4uxQu7iX%2Bg9ZFSlMbgMGRfcXSyzCg9rXfWC4bDiVqg7CpUAIznLTcYVYyPSq8l9fg%3D%3D"
     }
 }
+
 
 
 
