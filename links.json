@@ -24,6 +24,7 @@
     },
     "Domestic": {
         "GENERAL":"https://dashboard.transcanauto.com/#/superAdmin/vehicles/yard/?query=U2FsdGVkX18BL1U%2BY9Z8OnqIZzaf%2B499HTbZjJAVCzRBzgZefgHdTTtRY1SV2w8Eod4dyqW4V0SraZSBYXOo0vs61LnglnDSYU5Ia5LOHTLJZ3hYGAWa8wadKtsDzVbSRl2bVggPxoNu%2FyqlYoBip8DWgN2mt2meyCCs8l83y7wOn2X9C%2F%2F7NJzwTyBHq%2BGxFlWJbhKqnHciplXDloNRSZZ5LpwsF8tX4sZiIWHJQfI%3D",
+        "AT QAS - SOLD":"https://dashboard.transcanauto.com/#/superAdmin/vehicles/business/?query=U2FsdGVkX18UULETJRkAFAPyC2ekBlSBFTLAzoX%2F5OGFsxXIGgxqqtR781%2BCYcTJqU6TkaXngIlH2v3tNgGj2bhs4%2FjvrsPYNTQXY%2B3kIXXNFNrW0JnPxvZwKwa9W8fobIvkaIJ3U%2Fjb%2FQVABmKQH%2BrICRMNuhLdGiZdr%2BONrAyTCuFOEEDljMpQ0d%2BU8Jwr",
         "Not Sold at QAS/in Transit to QAS":"https://dashboard.transcanauto.com/#/superAdmin/vehicles/yard/?query=U2FsdGVkX1%2BQMXHpcrBxhqjYbRjuig9Bseujl6W%2BIUcgSq4YN3oVV5akp2MgZ2qZxfaFTMPZeUmPUOEyPHpabpKU0fKR4B2Q7tLF%2Fbg%2Fwr%2BroiJrrNIpWBuoNYTcE3ZwqGX41kwdq2fCSPaMLLS5sNfn8xKKQN%2F1rTazz3PadvM%2FeZWy8Dm1vkWPhS0%2B8oQ3",
         "Not Sold at QAS":"https://dashboard.transcanauto.com/#/superAdmin/vehicles/yard/?query=U2FsdGVkX1%2BQMXHpcrBxhqjYbRjuig9Bseujl6W%2BIUcgSq4YN3oVV5akp2MgZ2qZxfaFTMPZeUmPUOEyPHpabpKU0fKR4B2Q7tLF%2Fbg%2Fwr%2BroiJrrNIpWBuoNYTcE3ZwqGX41kwdq2fCSPaMLLS5sNfn8xKKQN%2F1rTazz3PadvM%2FeZWy8Dm1vkWPhS0%2B8oQ3",
         "At QAS - PAID":"https://dashboard.transcanauto.com/#/superAdmin/vehicles/yard/?query=U2FsdGVkX18ArDP8VLwBZHxprfRlN1kBmTZaGkSzxwB8B5NJvy17N8M9UI2%2Fm5zpNw1NmW6fXi3HI0tH69TQWrs%2BM7dBIlywk0uKz0frdJS2W4fHIGQT021L1tCyfU%2FvANpv9kJPar0lVL9VrbAlpmwY%2BsTPUS%2FX3DGAifG9RgkXSVVbHPHW7CPFog2%2F18LO",
@@ -44,6 +45,7 @@
         "AT DEALER": "https://dashboard.transcanauto.com/#/superAdmin/vehicles/admin/?query=U2FsdGVkX1%2Fd326no1p3VXSMB452tPcccYP%2BwJCe6feiPACG8sKVWHUThKZgecZzDLvr8pDRAqrEmSMFtMUOI4uxQu7iX%2Bg9ZFSlMbgMGRfcXSyzCg9rXfWC4bDiVqg7CpUAIznLTcYVYyPSq8l9fg%3D%3D"
     }
 }
+
 
 
 
