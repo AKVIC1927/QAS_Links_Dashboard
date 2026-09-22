@@ -1,27 +1,17 @@
 {
     "ALL": {
-      "ALL IN YARD": "https://dashboard.transcanauto.com/#/superAdmin/vehicles/export/?query=U2FsdGVkX18PSaIUV4kUXTnEoGhyvYHYpNL5O%2FlfRdvJLkm5EFqc%2BkPTBsKrwFej4gj8K48lOtHfHABMQ6WcjCJ9OJfPvf5Yako3MyKVAYmCGV1MFMuLqmPBmGFU31aq2jWHQ9WneXbN6Cf8s5mrBA%3D%3D"
+      "ALL IN YARD": "https://dashboard.transcanauto.com/#/superAdmin/vehicles/logistic/?query=U2FsdGVkX19YCpt%2Bviub1JvgII5ccf4QkYBO%2FC5vMnbqVTxpZSlvsLZO67Efw6HRYMBu72Qgxj97xTkV35KFtvZL9U6btSR1otohk4qBWXFMxTASPlIngSkDYigu%2Blo7uLh%2F6Z6dIfGAZYirPInhJpGOmFxK3o1r6kznIJrNaTE%3D"
+    },
+    "LOCAL": {
+        "SOLD": "https://dashboard.transcanauto.com/#/superAdmin/vehicles/logistic/?query=U2FsdGVkX1%2BtMYTunoHxIJSWv5binOZb8KaWRBDmlziKI5v5ETqsflqSvjfbGMP8RGsU2xQFCPpjOgk9gAhS8C%2BG6l%2BugGQX3bptKt%2B9Csw1C9HqIID6NODlpky9GrJFqG6GcOFkC8AO6UdsF1W0BYIAoOuYMFNCfDWfcO0QZ%2BWSaz0giXUd456CfpBZL74P"
+        "RESERVED":"https://dashboard.transcanauto.com/#/superAdmin/vehicles/logistic/?query=U2FsdGVkX1%2BHfTOgUPJD8b2jXTro3Sjnn4N9%2BXIzoMPR0wrmK178egyCxE%2F3NUsAGvBdQSOZgTEcIgYDDWWfu2yjZxuc4lYVve81gynNBsjwmHZSiBSmaj0%2FClIWkdZZgEv6x3UG3zRKEedAVidCHnzB4QPZY8ivUu%2B6h0bA8SeykA%2Bvlet8x%2F2y9TY1cUD0",
+        "In Stock":"https://dashboard.transcanauto.com/#/superAdmin/vehicles/logistic/?query=U2FsdGVkX1%2FtpprD2eI83ew106AXJeXzwLQUDKSDpQv%2FIY7pSr2nFSP8nQXOx100jdAhtpP5G88oiXPpCptxr5jZHAK0TQiDe4XKPsrO8%2Bd6JzKP7rAdvNIRpwL66aE9V0bJyS8J%2Bm8Xhw6VCiVt%2BovX3Q4CiHVF5W%2B6GjryorHiAG9DjHtvhCy2d2z10pVIKhVYV4pfB4EJVSn3Ezj%2F8w%3D%3D",
     },
     "US": {
-      "GENERAL": "https://dashboard.transcanauto.com/#/superAdmin/vehicles/export/?query=U2FsdGVkX19JuiuVrRH7wx1uK%2FBRXBCbH5zPi4EFnOMl2VmxhMzxxZ%2BNjtphGN7aO8HT5hy48rzAPc%2B%2FjdFv6973yv3ZBTdyKNQX3tQO8a6qvmTEVajJJH2XJ4c%2BrC4pXnC%2F7DiKVuk%2FVvPdrpm8GlFTj6z0EOaD5Oc66p7X8C200tU4%2BjA4gj6eZZJs7duV",
-      "Boston - General":"https://dashboard.transcanauto.com/#/superAdmin/vehicles/export/?query=U2FsdGVkX1%2FZeijXf9awxJUCRGms3VaXGai3kA7rBXJIDX4zcQvWP%2F5uX3AoXH5rPrySEh8A%2BbYSmBDydP645TPjQjF%2BiBM%2FAKZaGGcZqCB8LekfDXX7g4DTvXRSxFYkgWlKfeQJkTc9ItCsbjCcn8c0sypVv81z0uBhRbuR9Ck%3D",
-      "BOSTON - READY":"https://dashboard.transcanauto.com/#/superAdmin/vehicles/export/?query=U2FsdGVkX18N2m9UEhNLiJJi9ZZZiLMX6GqbJy0TSj5Xt%2FIeIEuAIZUN8nPuzxauNjRxFTID5Dhf2jzH9BDEayMHjGo%2BYj%2Fa3U%2FxL6OHmnSOBRd7%2BXllTm4GdaRO1XeSwOdgWBYKlg51mYwUcQmZpHDR0GmndQWFq3Z5yE22xpytncZGPThHilZP%2FHdPaQvh2oMHl56QzIacRl9%2FWAyHGJ%2BeJg%2FPbrbYQHM%2Bh1VlWj%2FvoET%2FEQyKViXiliaaPIGS",
-      "NY - General":"https://dashboard.transcanauto.com/#/superAdmin/vehicles/export/?query=U2FsdGVkX1%2BJoPh0foVUszDWC68WDQ00UXfa6ZKCGREyqBww7pfhDUW7qT%2F9sJLHAhAlD1Ndsn5E%2BvrddHfXdl8gAMRQJ5RhCv9%2BD%2FC18n9b%2B9Jg%2BmJZj7B%2FnV4vYrg82IDnrG4xClRS2eAV3UHL3zbqBjDgXOffb1yVU%2BowtEw%3D",
-      "NY - READY":"https://dashboard.transcanauto.com/#/superAdmin/vehicles/export/?query=U2FsdGVkX19oT3SUwn5CYD46O2PBMpHBRX9NJsoTTM2k%2BszWGIZF7NaKhi%2FWPKihvYXGh2M%2FFMgl00AUMNdgDMJZAF1MZCf0e15SXBAVVu2axGFqfv16XL3kQdgvV0jBj4bgo4aSGHEcv5ON7JLQTrPIk0MG44GHb977Gnl12DAJ4Po3qzfrgyYilIXYVC0vJ5y%2FyaGL1sMuWA0j9otz9iyEfVuc8052aTtQNls2zKOMkybkfwZRbPNaazZhMrC4"  
-    },
-    "IN USA": {
-      "All" : "https://dashboard.transcanauto.com/#/superAdmin/vehicles/admin/?query=U2FsdGVkX195qLGmi5oIXCedAvmUO3EhhaRtfzSLECkrCWVwXH9pLUdoVrbEft%2BlBwo%2F7WgC9PDuC0meyq1bc3YnLIeK%2BDCW3N6VHtf790QUzqOJxC9esyCA4m7SBTfsUk9z%2BjYSedTeopIgzeyTPhkp8lGmt859mJOMgMKWnJEyUFaOdC2Qgz0IvhqiRLK6Cd2cLtBT5zvOVqbmbPXYBm1w7Y2gb3YiIHhNpT23TCfAu1xwHnps8Xk3oJG9%2BnQmKk%2Fc0n1D1ixjaMxxtESAdTiTfSovcSaZEfgdM1Tiwi5L%2ByzOMQml3xwbbGT85xxBLL4vlVyFJoDMaXEj38%2FZIpZbkoBIYt9tcB5do60QYMR9VoVYn4mOrBhjY%2BP7M6fqUwtF8udoAVLDJB7KofJqpUEZm56ZOJa%2Fy2hhCEHd9xiFxvrtaKSFfCxvCOSGWlJhg%2FX4IlOAuqdK9Q6U08q8gcy8O6Gdnx3Y6%2Fz%2BiNVQDwWooqLB7R3zdeXdCpgYRk54ecZlIgAC7JQ6liw6WojQvWZOCEP459md8ix8jNVs5GWZtS1DXeXenhnUHABTIiJ6rgIyBzcWavrBbohGMqXHZnLjYDAT0LudHVUDZzNzhi70EsH%2F4LZ1FaJrKQ%2BWSReFju1chmlAGAC5QsZpD3e7MbXt97szrJY7CeCk0JyeMAYP7KoI8e40nmh3gSJsMGdHRG%2F7kiYlG239ojErtS%2FQzMwhZZdqT%2FTDtU4anKsmVrxc0axQ1QSTiuyPh0Y%2FLcCm",
-      "At Steve Labelle": "https://dashboard.transcanauto.com/#/superAdmin/vehicles/yard/?query=U2FsdGVkX19%2B2UCGnLaKHpLB7IWfg9lqLNiFJau%2FjW%2FymBli3mkBRicHp5N%2B%2BXLvz4aDKkn%2FN5%2F5%2BXFw5XgoZqgjzpStMVzmrGq1jA7%2FrM6BktO%2BYB5gsUULFPAXHRv4oxgcB0RDaxLAn%2FW30j24r%2BJPUjE%2FVILgPb%2BtRn8AB08%3D",
-      "At Compliant": "https://dashboard.transcanauto.com/#/superAdmin/vehicles/yard/?query=U2FsdGVkX19VitDnl1M7djjCUuWEBcVDoikJVtrDteuTAOGrm2%2Bq%2B%2F9%2BU5vcasmkyGBY7SvAht1A9sDmieeLwqoBHrqxiKUy%2BZ9pi6%2Bey7pOIF28YWN4orlo9BmWYdXPGPwk7nQaLJKTiYqIfRdFuw%3D%3D",
-      "At Autobiz Stateline Lot": "https://dashboard.transcanauto.com/#/superAdmin/vehicles/export/?query=U2FsdGVkX18VD160Avrm2Z%2Fvdsn5K7H374alwyjkltdfhmi98PeI0KDxl6BTG657ylp6UndjXxa7ECzqSEDSCR%2FBjWJ5mOw%2BC2yl4HdNto1s9V1SXLvC8n%2BEy9ycK3JEoFa7leHcr%2FvLw6BxT90LOxVi0rmjD2T1J36AzJOufIg%3D",
-      "At Stateline": "https://dashboard.transcanauto.com/#/superAdmin/vehicles/yard/?query=U2FsdGVkX18olsx9dKf62dI%2B9Bw13HI4T6R%2BwOYoIJaD6YUYPyywHwEgyIisXQBpPV13FNxKcr6QkhsOtWhytKTl7YvP%2BovlZS1B6qBzfFp8RMjjAhlvKsdhpnDJPqCnyCQ4VMTREjtIOxvxGEDJeU%2F6gHj%2B3YYEahCJgsV7mbg%3D"
-    },
-    "WORK ORDER":{
-        "AT BODYSHOP": "https://dashboard.transcanauto.com/#/superAdmin/vehicles/export/?query=U2FsdGVkX1930iFY3JtGMtl5ydGKeXnxRcdC0xjUXY4DiJs0LldBtGxO4LDt8esQ03uYCklduzsPehu9508k0p0d7eubqJA256i6Ch6Z8PACyY7t2aALrdaJ4zOZbQCWxF1WKAMZoMRFfOLuBgAmh%2BheEf8O5KhMHm%2BRbmxEZLGDqGp90E4k1b%2BmF7%2B1lFOg9JanVyHgyQ4YQIsb1x6aRZxHb0REi17E4kSIueRYASJzZyD6JGT6FBMdQdpKqRXhh6Ekx4KaFvgQNjE6DKmZoCVCMnBaZcsQtBpuFivGL8Ok0qG0e0fdDHXDhyc7iT%2BUrUq7foSrDY1exWepmxDOZT1YWccJi1dwjdthq4RjvAPMYI2XhSWSb7Z%2BUkD%2Fpr8U4%2Bz9PDNa4trSf6%2Bp2csvgcSlpl6TnjRPElXEaRKWtCQ%3D"
-     }
+      "GENERAL": "https://dashboard.transcanauto.com/#/superAdmin/vehicles/logistic/?query=U2FsdGVkX1%2Fjp4gVa%2Bh%2FnVLdgUNuFO%2FOU6jFByaJ03m%2FTHg4lUPIGYBxMs9ay8cosxZett%2FWT8wHyF8IQXFCRqr3reO3QN6SMH0g%2Biu1OoQfOoAw%2FcwLzeZWFHRUz4%2BlkL84QBnTZtUtykrP3mXA9ObQbjhh98AYc48j0iiqnB1U9sKyDhEO772paeRAEE2ymIyfoTk%2Fk1mYsDxs0Inzrw%3D%3D",
+      "Boston - General":"https://dashboard.transcanauto.com/#/superAdmin/vehicles/logistic/?query=U2FsdGVkX1%2FxqvyihNVDkGgxQr%2FNdAiRmHJ0QPv3bLznJTiQeo2luVIcjWIOnilKZiQnnlXx8qwPot10Sm6zNml0FzPYbJNcJCD4UISSxh3OWjEGIlCR%2B84RhrDhicdvSaN9fx0wNVQZdXZWoi9csMx5qWJGWNcRz%2Fsjb44PRCuJTCaOfsEu0EwTBcW8i5H%2F",
+      "NY - General":"https://dashboard.transcanauto.com/#/superAdmin/vehicles/logistic/?query=U2FsdGVkX1%2FQnXwBea8c7n9VCYlfAyK7E%2FFBbJnio5j4qqR4fl1eKbQgLpLdwQSZLHhM2Ndp2RNDqay%2B1cvDiLRHRmz0SpKsvFTs8UG1KpXYyPUAFxIvEY4oId67TCHL2GZtL0eRS4xSZLORWyX3872oN93Qn%2FJqTE%2FpMjVH43%2Fas33illuBaKAOP0Tw3aZt"
 }
-
-
 
 
 
