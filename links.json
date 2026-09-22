@@ -1,22 +1,15 @@
 {
-    "ALL": {
-      "ALL IN YARD": "https://dashboard.transcanauto.com/#/superAdmin/vehicles/logistic/?query=U2FsdGVkX19YCpt%2Bviub1JvgII5ccf4QkYBO%2FC5vMnbqVTxpZSlvsLZO67Efw6HRYMBu72Qgxj97xTkV35KFtvZL9U6btSR1otohk4qBWXFMxTASPlIngSkDYigu%2Blo7uLh%2F6Z6dIfGAZYirPInhJpGOmFxK3o1r6kznIJrNaTE%3D"
-    },
-    "LOCAL": {
-        "SOLD": "https://dashboard.transcanauto.com/#/superAdmin/vehicles/logistic/?query=U2FsdGVkX1%2BtMYTunoHxIJSWv5binOZb8KaWRBDmlziKI5v5ETqsflqSvjfbGMP8RGsU2xQFCPpjOgk9gAhS8C%2BG6l%2BugGQX3bptKt%2B9Csw1C9HqIID6NODlpky9GrJFqG6GcOFkC8AO6UdsF1W0BYIAoOuYMFNCfDWfcO0QZ%2BWSaz0giXUd456CfpBZL74P"
-        "RESERVED":"https://dashboard.transcanauto.com/#/superAdmin/vehicles/logistic/?query=U2FsdGVkX1%2BHfTOgUPJD8b2jXTro3Sjnn4N9%2BXIzoMPR0wrmK178egyCxE%2F3NUsAGvBdQSOZgTEcIgYDDWWfu2yjZxuc4lYVve81gynNBsjwmHZSiBSmaj0%2FClIWkdZZgEv6x3UG3zRKEedAVidCHnzB4QPZY8ivUu%2B6h0bA8SeykA%2Bvlet8x%2F2y9TY1cUD0",
-        "In Stock":"https://dashboard.transcanauto.com/#/superAdmin/vehicles/logistic/?query=U2FsdGVkX1%2FtpprD2eI83ew106AXJeXzwLQUDKSDpQv%2FIY7pSr2nFSP8nQXOx100jdAhtpP5G88oiXPpCptxr5jZHAK0TQiDe4XKPsrO8%2Bd6JzKP7rAdvNIRpwL66aE9V0bJyS8J%2Bm8Xhw6VCiVt%2BovX3Q4CiHVF5W%2B6GjryorHiAG9DjHtvhCy2d2z10pVIKhVYV4pfB4EJVSn3Ezj%2F8w%3D%3D",
-    },
-    "US": {
-      "GENERAL": "https://dashboard.transcanauto.com/#/superAdmin/vehicles/logistic/?query=U2FsdGVkX1%2Fjp4gVa%2Bh%2FnVLdgUNuFO%2FOU6jFByaJ03m%2FTHg4lUPIGYBxMs9ay8cosxZett%2FWT8wHyF8IQXFCRqr3reO3QN6SMH0g%2Biu1OoQfOoAw%2FcwLzeZWFHRUz4%2BlkL84QBnTZtUtykrP3mXA9ObQbjhh98AYc48j0iiqnB1U9sKyDhEO772paeRAEE2ymIyfoTk%2Fk1mYsDxs0Inzrw%3D%3D",
-      "Boston - General":"https://dashboard.transcanauto.com/#/superAdmin/vehicles/logistic/?query=U2FsdGVkX1%2FxqvyihNVDkGgxQr%2FNdAiRmHJ0QPv3bLznJTiQeo2luVIcjWIOnilKZiQnnlXx8qwPot10Sm6zNml0FzPYbJNcJCD4UISSxh3OWjEGIlCR%2B84RhrDhicdvSaN9fx0wNVQZdXZWoi9csMx5qWJGWNcRz%2Fsjb44PRCuJTCaOfsEu0EwTBcW8i5H%2F",
-      "NY - General":"https://dashboard.transcanauto.com/#/superAdmin/vehicles/logistic/?query=U2FsdGVkX1%2FQnXwBea8c7n9VCYlfAyK7E%2FFBbJnio5j4qqR4fl1eKbQgLpLdwQSZLHhM2Ndp2RNDqay%2B1cvDiLRHRmz0SpKsvFTs8UG1KpXYyPUAFxIvEY4oId67TCHL2GZtL0eRS4xSZLORWyX3872oN93Qn%2FJqTE%2FpMjVH43%2Fas33illuBaKAOP0Tw3aZt",
-}}
-
-
-
-
-
-
-
-
+  "ALL": {
+    "ALL IN YARD": "https://dashboard.transcanauto.com/#/superAdmin/vehicles/logistic/?query=U2FsdGVkX19YCpt%2Bviub1JvgII5ccf4QkYBO%2FC5vMnbqVTxpZSlvsLZO67Efw6HRYMBu72Qgxj97xTkV35KFtvZL9U6btSR1otohk4qBWXFMxTASPlIngSkDYigu%2Blo7uLh%2F6Z6dIfGAZYirPInhJpGOmFxK3o1r6kznIJrNaTE%3D"
+  },
+  "LOCAL": {
+    "SOLD": "https://dashboard.transcanauto.com/#/superAdmin/vehicles/logistic/?query=U2FsdGVkX1%2BtMYTunoHxIJSWv5binOZb8KaWRBDmlziKI5v5ETqsflqSvjfbGMP8RGsU2xQFCPpjOgk9gAhS8C%2BG6l%2BugGQX3bptKt%2B9Csw1C9HqIID6NODlpky9GrJFqG6GcOFkC8AO6UdsF1W0BYIAoOuYMFNCfDWfcO0QZ%2BWSaz0giXUd456CfpBZL74P",
+    "RESERVED": "https://dashboard.transcanauto.com/#/superAdmin/vehicles/logistic/?query=U2FsdGVkX1%2BHfTOgUPJD8b2jXTro3Sjnn4N9%2BXIzoMPR0wrmK178egyCxE%2F3NUsAGvBdQSOZgTEcIgYDDWWfu2yjZxuc4lYVve81gynNBsjwmHZSiBSmaj0%2FClIWkdZZgEv6x3UG3zRKEedAVidCHnzB4QPZY8ivUu%2B6h0bA8SeykA%2Bvlet8x%2F2y9TY1cUD0",
+    "In Stock": "https://dashboard.transcanauto.com/#/superAdmin/vehicles/logistic/?query=U2FsdGVkX1%2FtpprD2eI83ew106AXJeXzwLQUDKSDpQv%2FIY7pSr2nFSP8nQXOx100jdAhtpP5G88oiXPpCptxr5jZHAK0TQiDe4XKPsrO8%2Bd6JzKP7rAdvNIRpwL66aE9V0bJyS8J%2Bm8Xhw6VCiVt%2BovX3Q4CiHVF5W%2B6GjryorHiAG9DjHtvhCy2d2z10pVIKhVYV4pfB4EJVSn3Ezj%2F8w%3D%3D"
+  },
+  "US": {
+    "GENERAL": "https://dashboard.transcanauto.com/#/superAdmin/vehicles/logistic/?query=U2FsdGVkX1%2Fjp4gVa%2Bh%2FnVLdgUNuFO%2FOU6jFByaJ03m%2FTHg4lUPIGYBxMs9ay8cosxZett%2FWT8wHyF8IQXFCRqr3reO3QN6SMH0g%2Biu1OoQfOoAw%2FcwLzeZWFHRUz4%2BlkL84QBnTZtUtykrP3mXA9ObQbjhh98AYc48j0iiqnB1U9sKyDhEO772paeRAEE2ymIyfoTk%2Fk1mYsDxs0Inzrw%3D%3D",
+    "Boston - General": "https://dashboard.transcanauto.com/#/superAdmin/vehicles/logistic/?query=U2FsdGVkX1%2FxqvyihNVDkGgxQr%2FNdAiRmHJ0QPv3bLznJTiQeo2luVIcjWIOnilKZiQnnlXx8qwPot10Sm6zNml0FzPYbJNcJCD4UISSxh3OWjEGIlCR%2B84RhrDhicdvSaN9fx0wNVQZdXZWoi9csMx5qWJGWNcRz%2Fsjb44PRCuJTCaOfsEu0EwTBcW8i5H%2F",
+    "NY - General": "https://dashboard.transcanauto.com/#/superAdmin/vehicles/logistic/?query=U2FsdGVkX1%2FQnXwBea8c7n9VCYlfAyK7E%2FFBbJnio5j4qqR4fl1eKbQgLpLdwQSZLHhM2Ndp2RNDqay%2B1cvDiLRHRmz0SpKsvFTs8UG1KpXYyPUAFxIvEY4oId67TCHL2GZtL0eRS4xSZLORWyX3872oN93Qn%2FJqTE%2FpMjVH43%2Fas33illuBaKAOP0Tw3aZt"
+  }
+}
